@@ -28,8 +28,9 @@ i=0
 while [ $i -lt $part_num ]; do
     start=$((header_end+LINE*i+1))
     end=$((header_end+LINE*(i+1)))
-    if [ $end -gt $total_lines ]; then
-        end=$total_lines
+    mtotal_lines=$((total_lines+header_end))
+    if [ $end -gt $mtotal_lines ]; then
+        end=$mtotal_lines
     fi
     echo "sed -n '${start},${end}p' ${input_file} > trace_split_${i}.html"
     cat header.html > trace_split_${i}.html
