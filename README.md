@@ -1,4 +1,4 @@
-# split trace each file 1000000 liens
+# split systrace file by 1000000 lines for each file
 
 # Usage
 
